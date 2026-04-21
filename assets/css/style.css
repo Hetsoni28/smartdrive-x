@@ -1,0 +1,303 @@
+/* ==========================================================================
+   🚀 SMARTDRIVE X - ENTERPRISE GLOBAL DESIGN SYSTEM V2.0
+   Architected for High-Performance, Responsiveness, and A11y
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. 🎨 THEME VARIABLES (Multi-Theme Architecture)
+   -------------------------------------------------------------------------- */
+:root {
+  /* 🌿 Customer Theme (Sage Green - Legacy) */
+  --sage-dark: #2b3327;
+  --sage-mid: #889c7c;
+  --sage-pale: #e0eadb;
+  --sage-white: #f4f5f3;
+
+  /* 🏜️ Customer Theme (Desert Luxury - New Homepage) */
+  --c-cream: #FCFAF2;     
+  --c-sand: #F3EBD3;      
+  --c-taupe: #E0D5C1;     
+  --c-mocha: #C1B098;     
+  --c-espresso: #8A7961;  
+
+  /* 🌊 Admin Theme (Enterprise Teal) */
+  --teal-primary: #4da89c;
+  --teal-dark: #1a2624;
+  --teal-light: #ccecd4;
+
+  /* ⚡ Global Action Accents */
+  --accent-gold: #ffc107;
+  --accent-danger: #dc3545;
+  --accent-success: #198754;
+  --accent-info: #0dcaf0;
+
+  /* 📐 UI Geometry & Spacing */
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-pill: 50px;
+
+  /* 🌫️ Enterprise Shadow System */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
+  --shadow-float: 0 25px 50px rgba(0, 0, 0, 0.12);
+  
+  --shadow-glow-sage: 0 10px 25px rgba(136, 156, 124, 0.3);
+  --shadow-glow-teal: 0 10px 25px rgba(77, 168, 156, 0.3);
+  --shadow-glow-mocha: 0 10px 25px rgba(193, 176, 152, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   2. 🌍 BASE RESET, TYPOGRAPHY & A11Y
+   -------------------------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Outfit", "Plus Jakarta Sans", sans-serif;
+  background-color: var(--sage-white);
+  color: #2c332e;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Fluid Typography Engine (Scales perfectly on Mobile -> Desktop) */
+h1, .display-1 { font-size: clamp(2.5rem, 5vw, 4.5rem) !important; }
+h2, .display-2 { font-size: clamp(2rem, 4vw, 3.5rem) !important; }
+h3, .display-3 { font-size: clamp(1.75rem, 3vw, 2.5rem) !important; }
+h4, .display-4 { font-size: clamp(1.5rem, 2.5vw, 2rem) !important; }
+
+/* Beautiful Text Selection */
+::selection {
+  background-color: var(--teal-primary);
+  color: white;
+}
+
+/* Keyboard Accessibility Focus Rings */
+:focus-visible {
+  outline: 3px solid var(--teal-primary);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Typography Utilities */
+.tracking-wide { letter-spacing: 1.5px; }
+.tracking-widest { letter-spacing: 3px; }
+.fw-black { font-weight: 900 !important; }
+
+.text-sage { color: var(--sage-dark) !important; }
+.text-teal { color: var(--teal-primary) !important; }
+.text-mocha { color: var(--c-mocha) !important; }
+
+/* --------------------------------------------------------------------------
+   3. 📜 PREMIUM SCROLLBAR ARCHITECTURE
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--sage-white);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+  border: 2px solid var(--sage-white);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal-primary);
+}
+
+/* --------------------------------------------------------------------------
+   4. 🧊 GLASSMORPHISM & UI UTILITIES
+   -------------------------------------------------------------------------- */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: var(--shadow-md);
+}
+
+.glass-panel-dark {
+  background: rgba(30, 36, 28, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-float);
+}
+
+/* --------------------------------------------------------------------------
+   5. 🔘 UNIVERSAL BUTTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-sage {
+  background-color: var(--sage-dark);
+  color: white;
+  border: none;
+}
+.btn-sage:hover {
+  background-color: #1e241c;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-sage);
+}
+
+.btn-teal {
+  background: linear-gradient(135deg, var(--teal-primary) 0%, #3a857b 100%);
+  color: white;
+  border: none;
+}
+.btn-teal:hover {
+  background: var(--teal-dark);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-teal);
+}
+
+.btn-luxury {
+  background-color: var(--c-espresso);
+  color: var(--c-cream);
+  border: none;
+}
+.btn-luxury:hover {
+  background-color: var(--c-mocha);
+  color: var(--text-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow-mocha);
+}
+
+/* --------------------------------------------------------------------------
+   6. 📝 FORMS & INPUTS (Global Enhancements)
+   -------------------------------------------------------------------------- */
+.form-control,
+.form-select {
+  border-radius: var(--border-radius-sm);
+  padding: 0.85rem 1.2rem;
+  border: 2px solid transparent;
+  background-color: #f1f5f9;
+  transition: all 0.3s ease;
+  color: var(--sage-dark);
+  font-weight: 500;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: white;
+  border-color: var(--teal-primary);
+  box-shadow: 0 0 0 4px rgba(77, 168, 156, 0.15);
+  outline: none;
+}
+
+/* Checkboxes and Radios */
+.form-check-input:checked {
+  background-color: var(--teal-primary);
+  border-color: var(--teal-primary);
+}
+
+::placeholder {
+  color: #94a3b8;
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. 🎬 GLOBAL KEYFRAME ANIMATIONS & SKELETONS
+   -------------------------------------------------------------------------- */
+
+/* Form Error Shake */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+.anim-shake {
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Pulse Indicators */
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(220, 53, 69, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+.pulse-indicator {
+  height: 12px; width: 12px; background-color: var(--accent-danger);
+  border-radius: 50%; display: inline-block; animation: pulse-ring 2s infinite;
+}
+
+/* Subtle Gradient Shift */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.anim-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* 🦴 Enterprise Skeleton Loading Engine */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite linear;
+  border-radius: var(--border-radius-sm);
+  color: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+.skeleton * {
+  visibility: hidden;
+}
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* --------------------------------------------------------------------------
+   8. 📌 BOOTSTRAP OVERRIDES & FAILSAFES
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--border-radius-md);
+  border: none;
+}
+.badge {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.6em 0.9em;
+}
+.alert {
+  border: none;
+  border-radius: var(--border-radius-md);
+}
+.modal-content {
+  border-radius: var(--border-radius-lg);
+  border: none;
+}
+
+/* 🚨 AOS BUG FIX: 
+   Your previous CSS forced `opacity: 1 !important` on all [data-aos] elements, 
+   which broke the library globally. This is the correct, professional fallback method. 
+   It only forces visibility if JavaScript is completely disabled in the user's browser. */
+.no-js [data-aos] {
+  opacity: 1 !important;
+  transform: translate(0) !important;
+  visibility: visible !important;
+}
