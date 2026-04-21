@@ -1786,5 +1786,5 @@ function showMsg(el, colorClass, iconClass, text) {
     el.innerHTML     = `<i class="${iconClass} me-1"></i>${text}`;
 }
 </script>
-
+// updated
 <?php include 'includes/footer.php'; ?>
